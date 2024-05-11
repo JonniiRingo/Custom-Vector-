@@ -234,12 +234,22 @@ public:
 
 
     bool empty(){
-        if(size = 0){
+        if(size == 0){
             std::cout << "Vector is: empty. " << std::endl; 
             return true;
         } else 
             std::cout << "Vector is not emplty. " << std::endl; 
             return false; 
+    }
+
+
+
+    void vectorBubbleSort(){
+        for(int i = 0; i < size; i++){
+            if (arr[i + 1] > arr[1] ){
+                arr[i] = arr[i + 1]; 
+            }
+        }
     }
 
     void listt(){
@@ -280,14 +290,15 @@ public:
 // Note: After each pass, the next largest element is placed at its correct position. 
 // Therefore, with each subsequent pass, you need to consider one less element at the end of the array.
 
-template <typename U>
-U vectorBubbleSort(U & arr){
-    for(int i = 0; i < arr.size; i++){
-        if (arr[i + 1] > arr[1] ){
-            arr[i] = arr[i + 1]; 
-        }
-    }
-}
+
+// template <typename U>
+// U vectorBubbleSort(U & arr){
+//     for(int i = 0; i < size; i++){
+//         if (arr[i + 1] > arr[1] ){
+//             arr[i] = arr[i + 1]; 
+//         }
+//     }
+// }
 
 int main() {
     // Create a vector with initial capacity of  10
@@ -326,10 +337,20 @@ int main() {
     v1.reverse();
     std::cout << "The reversed vector is: "; 
     v1.print();
-
     v1.clear();
     v1.print();
-    v1.insert(28,0); 
+    v1.pushBack(7); 
+    v1.pushBack(11);
+    v1.pushBack(5);
+    v1.pushBack(10);
+    v1.pushBack(55);
+    v1.pushBack(28);
+    v1.pushBack(4);
+    v1.pushBack(19);
+    v1.pushBack(2);
+    v1.print();
+    std::cout << "Bubble sort first pass \n" << std::endl; 
+    v1.vectorBubbleSort();
     v1.print();
 
     return 0;
