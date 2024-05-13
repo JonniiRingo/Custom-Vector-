@@ -32,12 +32,11 @@
 // remove()  To remove a specific element in an array
 // empty() to check if the vector is empty
 // insert() to insert an element at a specific position
-
 // reverse() To reverse or flip the order of the elements in the array.
 
+// bubbleSOrt To impliment this well known algorith
 
 // mergeSort() To impliment this well known algorithm
-// bubbleSOrt To impliment this well known algorith
 // slelctionSort() To impliment this well known algorithm. 
 
 
@@ -290,15 +289,6 @@ public:
 // Note: After each pass, the next largest element is placed at its correct position. 
 // Therefore, with each subsequent pass, you need to consider one less element at the end of the array.
 
-
-// template <typename U>
-// U vectorBubbleSort(U & arr){
-//     for(int i = 0; i < size; i++){
-//         if (arr[i + 1] > arr[1] ){
-//             arr[i] = arr[i + 1]; 
-//         }
-//     }
-// }
 
 int main() {
     // Create a vector with initial capacity of  10
