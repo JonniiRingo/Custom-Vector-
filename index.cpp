@@ -234,7 +234,7 @@ public:
 
 
     bool empty(){
-        if(size = 0){
+        if(size == 0){
             std::cout << "Vector is: empty. " << std::endl; 
             return true;
         } else 
