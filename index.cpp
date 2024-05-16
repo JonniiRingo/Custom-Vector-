@@ -241,33 +241,6 @@ public:
             return false; 
     }
 
-
-
-    // void swap_(int arr[], int n) {
-    //     bool swapped;
-    //     for (int i = 0; i < n - 1; i++) {
-    //         swapped = false;
-    //         for (int j = 0; j < n - i - 1; j++) {
-    //             if (arr[j] > arr[j + 1]) {
-    //                 int c = arr[j];
-    //                 arr[j] = arr[j + 1];
-    //                 arr[j + 1] = c;
-    //                 swapped = true;
-    //             }
-    //         }
-    //         if (!swapped) {
-    //             break;
-    //         } 
-    //         cout << endl;
-    //         cout << "Sorting pass " << i+1 << ": "; 
-    //         for (int l = 0; l < n; l++){
-    //             cout << arr[l] << " ";
-    //         }
-    //         cout << "" << endl;
-    //     }
-
-    // }
-
     // void selectSort(int arr[], int n) {
     //     for (int i = 0; i < n - 1; i++) {
     //         int minIndex = i;
@@ -306,6 +279,33 @@ public:
     }
 
 }; 
+
+
+    template <typename T> 
+    void vectorBubbleSort(vector<T>& arr, int n) {
+        bool swapped;
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int c = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = c;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            } 
+            std::cout << std::endl;
+            std::cout << "Sorting pass " << i+1 << ": "; 
+            for (int l = 0; l < n; l++){
+                std::cout << arr[l] << " ";
+            }
+            std::cout << "" << std::endl;
+        }
+
+    }
 
 // Bubble Sort Algorithm:
 
@@ -373,7 +373,7 @@ int main() {
     v1.pushBack(2);
     v1.print();
     std::cout << "Bubble sort first pass \n" << std::endl; 
-    v1.vectorBubbleSort();
+    vectorBubbleSort(v1, 5);
     v1.print();
 
     return 0;
