@@ -32,12 +32,11 @@
 // remove()  To remove a specific element in an array
 // empty() to check if the vector is empty
 // insert() to insert an element at a specific position
-
 // reverse() To reverse or flip the order of the elements in the array.
 
+// bubbleSOrt To impliment this well known algorith
 
 // mergeSort() To impliment this well known algorithm
-// bubbleSOrt To impliment this well known algorith
 // slelctionSort() To impliment this well known algorithm. 
 
 
@@ -242,6 +241,22 @@ public:
             return false; 
     }
 
+    // void selectSort(int arr[], int n) {
+    //     for (int i = 0; i < n - 1; i++) {
+    //         int minIndex = i;
+    //         for (int j = i + 1; j < n; j++) {
+    //             if (arr[j] < arr[minIndex]) {
+    //                 minIndex = j;
+    //             }
+    //         }
+    //         int temp = arr[i];
+    //         arr[i] = arr[minIndex];
+    //         arr[minIndex] = temp;
+            
+    //     }
+    // }
+
+
     void listt(){
         std::cout << "pushBack() To add to the back of the array. " << std::endl;
         std::cout << "pushFront() To add an element to the front of the array. " << std::endl;
@@ -265,6 +280,33 @@ public:
 
 }; 
 
+
+    template <typename T> 
+    void vectorBubbleSort(vector<T>& arr, int n) {
+        bool swapped;
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int c = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = c;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            } 
+            std::cout << std::endl;
+            std::cout << "Sorting pass " << i+1 << ": "; 
+            for (int l = 0; l < n; l++){
+                std::cout << arr[l] << " ";
+            }
+            std::cout << "" << std::endl;
+        }
+
+    }
+
 // Bubble Sort Algorithm:
 
 // 1. Start from the first element of the array, compare the current element with the next one.
@@ -280,14 +322,6 @@ public:
 // Note: After each pass, the next largest element is placed at its correct position. 
 // Therefore, with each subsequent pass, you need to consider one less element at the end of the array.
 
-// template <typename U>
-// U vectorBubbleSort(U & arr){
-//     for(int i = 0; i < arr.size; i++){
-//         if (arr[i + 1] > arr[1] ){
-//             arr[i] = arr[i + 1]; 
-//         }
-//     }
-// }
 
 int main() {
     // Create a vector with initial capacity of  10
@@ -326,10 +360,20 @@ int main() {
     v1.reverse();
     std::cout << "The reversed vector is: "; 
     v1.print();
-
     v1.clear();
     v1.print();
-    v1.insert(28,0); 
+    v1.pushBack(7); 
+    v1.pushBack(11);
+    v1.pushBack(5);
+    v1.pushBack(10);
+    v1.pushBack(55);
+    v1.pushBack(28);
+    v1.pushBack(4);
+    v1.pushBack(19);
+    v1.pushBack(2);
+    v1.print();
+    std::cout << "Bubble sort first pass \n" << std::endl; 
+    vectorBubbleSort(v1, 5);
     v1.print();
 
     return 0;
